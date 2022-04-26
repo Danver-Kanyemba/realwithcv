@@ -1,0 +1,97 @@
+@import "/src/styles/mix-ins.scss";
+@import "/src/styles/margins.scss";
+
+ion-content {
+    --background: black;
+
+    &.camera-ready {
+        --background: transparent;
+    }
+
+}   
+
+// canvas {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     width: auto;
+//     height: 100%;
+// }
+
+ion-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    left: 20px;
+    z-index: 100000;
+}
+
+.image-processing, .camera-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    z-index: 100000;
+    width: 100%;
+
+    ion-spinner {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    p {
+        font-size: 30px;
+        line-height: 30px;
+        color: white;
+        margin: 0;
+        font-weight: 700;
+    }
+
+}
+
+.image-processing {
+
+    ion-spinner {
+        margin-bottom: $bottomMargin;
+    }
+
+}
+
+.video-stream-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+  }
+
+#videoFeed, #canvasOutput {
+    min-width: 100%; 
+    min-height: 100%; 
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+
+    /* Center the video */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#videoFeed {
+    z-index: -1;
+    //opacity: 0.4;
+}
+
+#canvasOutput {
+    opacity: 0.4;
+    z-index: 1000;
+    //background: yellow;
+}

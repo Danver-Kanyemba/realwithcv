@@ -1,0 +1,12 @@
+<div *ngIf="!cameraReady" class="camera-loading">
+  <ion-spinner name="crescent"></ion-spinner>
+</div> 
+
+<ion-content [ngClass]="{'camera-ready': cameraReady}">  
+  <canvas id="canvasOutput"></canvas>
+
+  <div class="video-stream-container">
+    <video autoplay id="videoFeed"></video>
+    <!-- vef -->
+  </div>
+</ion-content> 
